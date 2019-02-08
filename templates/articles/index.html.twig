@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title%} POS {% endblock %}
+
+{% block body %}
+<h1>Article</h1>
+{# <p>Hi! My name is {{name}}</p> #}
+
+{% if articles %}
+    <table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Article Title</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for article in articles %}
+    <tr class="table-active">
+        <td>{{ article }}</td>
+        <td>
+            <button onclick="myfunction({{article}})" class="btn btn-outline-danger">Read</button>
+        </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table> 
+{% else %}
+    No Article
+{% endif %}
+
+{% endblock %}
